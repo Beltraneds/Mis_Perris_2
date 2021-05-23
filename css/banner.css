@@ -1,0 +1,35 @@
+
+#banner img{
+    width: 100%;
+}
+
+#banner .contenedor{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 50%;
+    color: white;
+    font-family: cursive;
+}
+
+#banner .contenedor h2{
+    font-size: 29px;
+}
+
+#banner .contenedor a{
+    color: teal;
+    text-decoration: none;
+    display: block; /*despliegue como bloque (caja)*/
+    width: 100px;
+    margin-top: 25px;
+    padding: 10px;
+    background: white;
+    border-radius: 7px;
+    border: solid 3px seagreen;
+}
+
+#banner .contenedor a:hover{
+    background: seagreen;
+    border: solid 3px white;
+    color: white;
+}

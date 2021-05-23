@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Perris</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/formulario.css">
+</head>
+
+<body>
+    <!--cabecera de la pagina-->
+    <header>
+        <!--contenedor que almacena el titulo MIS PERRIS y el menu-->
+        <div class="contenedor">
+            <h1 class="icon-guidedog">Mis Perris</h1>
+            <!--Control que permite visualizar el menu lateral (MOVIL)-->
+            <input type="checkbox" name="" id="menu-bar">
+            <label class="icon-th-list" for="menu-bar"></label>
+            <!--Menu-->
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="galeria.html">Galería</a>
+                <a href="formulario.html">Formulario</a>
+                <a href="">Quienes Somos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!--sector del main(contenido de la pagina)-->
+    <main>
+        <!--banner superior con imagen del perro y texto flotando sobre ella-->
+        <section id="banner">
+            <img src="img/perro1.jpg" alt="">
+            <div class="contenedor">
+                <h2>Mascotas felices en Mis Perris</h2>
+                <p>Cuál es la mejor mascota para usted</p>
+                <a href="">Leer Más</a>
+            </div>
+        </section>
+
+        <!--Sector de bienvenida-->
+        <section id="bienvenida">
+            <h2>Formulario de inscripción para adopción</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis beatae ipsum voluptatibus fugit
+                quisquam quod fuga, at ea corrupti voluptatum reiciendis, aperiam aliquam, deserunt id odio? Iusto illum
+                eum saepe?</p>
+        </section>
+
+        <!--seccion del formulario-->
+        <section id="formulario">
+            <form class="form-registro" action="" method="post">
+                <h2 class="form-titulo">Creación cuenta de usuario</h2>
+                <div class="contenedor-input">
+                    <input class="col-sm" type="text" name="txtNombre" id="" placeholder="Ingrese nombre">
+                    <input class="col-sm" type="text" name="txtApellido" id="" placeholder="Ingrese apellido">
+                    <input class="col-xl" type="email" name="txtEmail" id="" placeholder="Ingrese email">
+                    <input class="col-sm" type="text" name="txtUsuario" id="" placeholder="Ingrese usuario">
+                    <input class="col-sm" type="password" name="txtPass" id="" placeholder="Ingrese contraseña">
+                    <input class="col-xl" type="text" name="txtFono" id="" placeholder="Ingrese teléfono">
+
+                    <input class="btn-registro" type="submit" value="Registrar">
+                    <input class="btn-registro" type="button" value="Acción" onclick="mensaje()">
+                </div>
+            </form>
+        </section>
+
+    </main>
+    <!--sector del pie de página-->
+    <footer>
+        <div class="contenedor">
+            <p>Mis Perris - Desarrollo Web</p>
+        </div>
+    </footer>
+
+    <script>
+        function mensaje() {
+            alert('Hola Mundo');
+        }
+    </script>
+        
+    <script src="dist/js/lightbox-plus-jquery.js"></script>
+</body>
+
+</html>
