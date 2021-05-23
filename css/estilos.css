@@ -16,7 +16,7 @@ header{
     background: #333;
     color: aliceblue;
     position: fixed; /*Posición fija*/
-    z-index: 100%; /*Los elementos quedann por delante*/
+    z-index: 100; /*Los elementos quedann por delante*/
 }
 
 h1{
