@@ -54,15 +54,17 @@
             <form class="form-registro" action="" method="post">
                 <h2 class="form-titulo">Creación cuenta de usuario</h2>
                 <div class="contenedor-input">
-                    <input class="col-sm" type="text" name="txtNombre" id="" placeholder="Ingrese nombre">
-                    <input class="col-sm" type="text" name="txtApellido" id="" placeholder="Ingrese apellido">
-                    <input class="col-xl" type="email" name="txtEmail" id="" placeholder="Ingrese email">
+                    <input class="col-sm" type="text" name="txtRut" id="txtRut" placeholder="Ingrese rut">
+                    <input class="col-sm" type="text" name="txtNombreCompleto" id=""
+                        placeholder="Ingrese nombre y apellido">
+                    <input class="col-sm" type="date" name="txtFechaNaci" id="txtFechaNaci">
+                    <input class="col-sm" type="email" name="txtEmail" id="" placeholder="Ingrese email">
                     <input class="col-sm" type="text" name="txtUsuario" id="" placeholder="Ingrese usuario">
                     <input class="col-sm" type="password" name="txtPass" id="" placeholder="Ingrese contraseña">
                     <input class="col-xl" type="text" name="txtFono" id="" placeholder="Ingrese teléfono">
 
                     <input class="btn-registro" type="submit" value="Registrar">
-                    <input class="btn-registro" type="button" value="Acción" onclick="mensaje()">
+                    <input class="btn-registro" type="button" value="Validación" onclick="validarFormulario()">
                 </div>
             </form>
         </section>
@@ -75,12 +77,7 @@
         </div>
     </footer>
 
-    <script>
-        function mensaje() {
-            alert('Hola Mundo');
-        }
-    </script>
-        
+    <script src="js/scripts.js"></script>
     <script src="dist/js/lightbox-plus-jquery.js"></script>
 </body>
 
