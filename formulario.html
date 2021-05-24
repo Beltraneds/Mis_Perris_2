@@ -8,6 +8,7 @@
     <title>Mis Perris</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/formulario.css">
+    <script src="js/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -51,25 +52,65 @@
 
         <!--seccion del formulario-->
         <section id="formulario">
-            <form class="form-registro" action="" method="post">
+            <form class="form-registro" action="" method="post" onsubmit="return validarFormulario()">
                 <h2 class="form-titulo">Creación cuenta de usuario</h2>
                 <div class="contenedor-input">
-                    <input class="col-sm" type="text" name="txtRut" id="txtRut" placeholder="Ingrese rut">
-                    <input class="col-sm" type="text" name="txtNombreCompleto" id=""
-                        placeholder="Ingrese nombre y apellido">
-                    <input class="col-sm" type="date" name="txtFechaNaci" id="txtFechaNaci">
-                    <input class="col-sm" type="email" name="txtEmail" id="" placeholder="Ingrese email">
-                    <input class="col-sm" type="text" name="txtUsuario" id="" placeholder="Ingrese usuario">
-                    <input class="col-sm" type="password" name="txtPass" id="" placeholder="Ingrese contraseña">
+                    <input class="col-sm" type="text" name="txtRut" id="txtRut" placeholder="Ingrese rut" required minlength="9" maxlength="10">
+                    <input class="col-sm" type="text" name="txtNombreCompleto" id="txtNombreCompleto"
+                        placeholder="Ingrese nombre y apellido" required minlength="5">
+                    <input class="col-sm" type="date" name="txtFechaNaci" id="txtFechaNaci" required>
+                    <input class="col-sm" type="email" name="txtEmail" id="" placeholder="Ingrese email" required minlength="8">
+                    <input class="col-sm" type="text" name="txtUsuario" id="" placeholder="Ingrese usuario" required minlength="8" maxlength="12">
+                    <input class="col-sm" type="password" name="txtPass" id="" placeholder="Ingrese contraseña" required minlength="5" maxlength="10">
                     <input class="col-xl" type="text" name="txtFono" id="" placeholder="Ingrese teléfono">
 
                     <input class="btn-registro" type="submit" value="Registrar">
-                    <input class="btn-registro" type="button" value="Validación" onclick="validarFormulario()">
+                    <input type="button" value="Grabar" onclick="grabar()">
+                    <input type="button" value="Listar" onclick="listar()">
+                    
                 </div>
             </form>
         </section>
+        <script src="js/usuario.js"></script>
+        <script>
+            var arreglo = new Array();
+            var index = 0;
+
+            function grabar() {
+                var rut = document.getElementById('txtRut').value;
+                var nombre = document.getElementById('txtNombreCompleto').value;
+                var fecha = document.getElementById('txtFechaNaci').value;
+                usu = new usuario();
+                usu.setRut(rut);
+                usu.setNombre(nombre);
+                usu.setFecha(fecha);
+                alert(usu.imprimir());
+                arreglo[index] = JSON.stringify(usu);
+                localStorage.setItem('registro',arreglo);
+                index++;
+                alert('Grabó');
+            }
+            function listar() {
+                var tabla = "<table border=1>";
+                    tabla = tabla + "<tr> <td>Rut</td> <td>Nombre</td> <td>Fecha</td> </tr>";
+                    var datos = localStorage.getItem('registro');
+                    var arreglo_temporal = new Array();
+                    datos = datos.split("},{").join("};{"); //reemplazar , por ;
+                    arreglo_temporal = datos.split(";");
+                    for (let index = 0; index < arreglo_temporal.length; index++) {
+                        var reg = arreglo_temporal[index];
+                        var usu = JSON.parse(reg);
+                        tabla = tabla+"<tr> <td>"+usu.rut+"</td> <td>"+usu.nombre+"</td> <td>"+usu.fecha+"</td> </tr>";
+                    }
+                    tabla = tabla+"</table>";
+                    document.getElementById('listado').innerHTML=tabla;
+            }
+        </script>
 
     </main>
+    <div id="listado">
+        
+    </div>
     <!--sector del pie de página-->
     <footer>
         <div class="contenedor">
