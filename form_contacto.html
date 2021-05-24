@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Perris</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -42,64 +45,55 @@
 
         <!--Sector de bienvenida-->
         <section id="bienvenida">
-            <h2>Bienvenido a nuestro club</h2>
+            <h2>Formulario de contacto</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis beatae ipsum voluptatibus fugit
                 quisquam quod fuga, at ea corrupti voluptatum reiciendis, aperiam aliquam, deserunt id odio? Iusto illum
                 eum saepe?</p>
         </section>
 
-        <!--seccion de blog de los perros-->
-        <section id="blog">
-            <h3>Lo último de nuestro blog</h3>
-            <div class="contenedor">
-                <article>
-                    <img src="img/perro2.jpg" alt="">
-                    <h4>Perrunos son amigos</h4>
-                </article>
 
-                <article>
-                    <img src="img/perro3.jpg" alt="">
-                    <h4>Simpatía perruna</h4>
-                </article>
+        <!--seccion del formulario-->
+        <script>
+            $(document).ready(function () {
+                
+            });
+        </script>
 
-                <article>
-                    <img src="img/perro4.jpg" alt="">
-                    <h4>La linda mascota</h4>
-                </article>
-            </div>
+        <section id="formulario">
+            <form class="form-registro" action="" method="post" id="formu">
+                <h2 class="form-titulo">Creación cuenta de usuario</h2>
+                <div class="contenedor-input">
+                    <input class="col-sm" type="text" name="txtRut" id="txtRut" placeholder="Ingrese rut" required
+                        minlength="9" maxlength="10">
+                    <input class="col-sm" type="text" name="txtNombreCompleto" id="txtNombreCompleto"
+                        placeholder="Ingrese nombre y apellido" required minlength="5">
+                    <input class="col-sm" type="date" name="txtFechaNaci" id="txtFechaNaci" required>
+                    <input class="col-sm" type="email" name="txtEmail" id="" placeholder="Ingrese email" required
+                        minlength="8">
+                    <input class="col-sm" type="text" name="txtUsuario" id="" placeholder="Ingrese usuario" required
+                        minlength="8" maxlength="12">
+                    <input class="col-sm" type="password" name="txtPass" id="" placeholder="Ingrese contraseña" required
+                        minlength="5" maxlength="10">
+                    <input class="col-xl" type="text" name="txtFono" id="" placeholder="Ingrese teléfono">
+
+                    <input class="btn-registro" type="submit" id="enviar" value="Registrar">
+                    <input class="btn-registro" type="reset" id="limpiar" value="Limpiar">
+
+                </div>
+            </form>
         </section>
-        <!--Información de perros para adoptar-->
-        <section id="info">
-            <h3>Para muchos de nosotros, las mascotas son miembros de nuestra familia</h3>
-            <div class="contenedor">
-                <article>
-                    <img src="img/perro5.jpg" alt="">
-                    <h4>Lulo</h4>
-                </article>
 
-                <article>
-                    <img src="img/perro6.jpg" alt="">
-                    <h4>Perruno</h4>
-                </article>
-
-                <article>
-                    <img src="img/perro7.jpg" alt="">
-                    <h4>Lilo</h4>
-                </article>
-
-                <article>
-                    <img src="img/perro8.jpg" alt="">
-                    <h4>Tuno</h4>
-                </article>
-            </div>
-        </section>
     </main>
+
     <!--sector del pie de página-->
     <footer>
         <div class="contenedor">
             <p>Mis Perris - Desarrollo Web</p>
         </div>
     </footer>
+
+    <script src="js/scripts.js"></script>
+    <script src="dist/js/lightbox-plus-jquery.js"></script>
 </body>
 
 </html>

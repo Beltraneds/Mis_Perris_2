@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/formulario.css">
     <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -67,6 +68,7 @@
                     <input class="btn-registro" type="submit" value="Registrar">
                     <input type="button" value="Grabar" onclick="grabar()">
                     <input type="button" value="Listar" onclick="listar()">
+                    <input type="button" value="jquery" id="btnJquery">
                     
                 </div>
             </form>
@@ -109,8 +111,17 @@
 
     </main>
     <div id="listado">
-        
+
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnJquery").click(function () {
+                var rut = $("#txtRut").val();
+                alert('Su rut es: '+rut);
+            });
+        });
+    </script>
     <!--sector del pie de página-->
     <footer>
         <div class="contenedor">
